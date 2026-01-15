@@ -10,7 +10,6 @@ import Header from './Header';
 
 const Login = () => {
 
-    const navigate = useNavigate()
     const [showsPasswordCheckList, setShowsPasswordCheckList ] = useState(false)
     const [signIn , setSignIn] = useState(true)
     const name = useRef(null)
@@ -71,12 +70,11 @@ const Login = () => {
                 // Signed up 
                 const user = userCredential.user;
                 updateProfile(user, {
-                    displayName: name.current.value, photoURL: "assets/githubProfile.png"
+                    displayName: name.current.value, photoURL: AVATAR_URL
                 }).then(() => {
                     // Profile updated!
                     const {uid,  email, displayName, photoURL} = auth.currentUser;
                     dispatch(addUser({uid: uid,  email: email, displayName: displayName, photoURL:photoURL}))
-                    navigate("/browse")
                 }).catch((error) => {
                     // An error occurred
                     setErrorMessage(error.message)
@@ -99,7 +97,6 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                navigate("/browse")
                 
                 // ...
             })
