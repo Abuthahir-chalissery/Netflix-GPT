@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import Header from './Header';
 
 
 const Login = () => {
@@ -122,12 +123,9 @@ const Login = () => {
   return (
     <div className='Netflix bg-[url(/assets/main_Bg.jpg)] bg-cover '>
         <div className='  bg-black/50 flex justify-center w-full min-h-screen bg-cover'>
-            <div className='w-full h-full flex flex-col gap-10 items-center max-w-300'>
+            <div className='w-full h-full flex flex-col gap-10 items-center '>
                 {/* Header */}
-                <div className='w-full h-auto'>
-                    {/* Logo */}
-                    <img className='h-20' src="/assets/Netflix_Logo.png" alt="" />
-                </div>
+                <Header signIn={signIn} />
 
                 {/* Body */}
                 <div className='w-100 h-auto rounded-md bg-black/80 text-white p-10 flex flex-col gap-10'>
