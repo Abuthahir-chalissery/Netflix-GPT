@@ -120,12 +120,12 @@ const Login = () => {
   return (
     <div className='Netflix bg-[url(/assets/main_Bg.jpg)] bg-cover '>
         <div className='  bg-black/50 flex justify-center w-full min-h-screen bg-cover'>
-            <div className='w-full h-full flex flex-col gap-10 items-center '>
+            <div className='w-full h-full flex flex-col  gap-10 items-center '>
                 {/* Header */}
                 <Header signIn={signIn} />
 
                 {/* Body */}
-                <div className='w-100 h-auto rounded-md bg-black/80 text-white p-10 flex flex-col gap-10'>
+                <div className='w-100 h-auto rounded-md bg-black/80 text-white p-10 flex flex-col mt-40 gap-10'>
                     <h1  className='text-4xl font-extrabold'>{signIn? "Sign In": "Sign Up"}</h1>
                     <div >   
                         <form className='flex flex-col gap-5 w-full h-auto' action="">
