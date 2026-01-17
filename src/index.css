@@ -11,3 +11,9 @@
 .Netflix{
   font-family: Netflix;
 }
+
+
+/* index.css or global.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
