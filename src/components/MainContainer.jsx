@@ -16,7 +16,7 @@ const MainContainer = () => {
 
     
   return (
-    <div className='w-full flex justify-center '>
+    <div className='w-full flex justify-center overflow-hidden'>
         <div className=' w-full  '>
             <VideoTitle title={original_title} overview={overview} backdrop_path={backdrop_path}/>
             <VideoBackground movieId={id} />

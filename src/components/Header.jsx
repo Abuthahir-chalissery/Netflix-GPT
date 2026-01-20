@@ -61,11 +61,11 @@ const Header = () => {
 
   return (
     <div onClick={()=> setShowMenu(false)} className={`w-full h-16 flex justify-center items-start ${showGptSearch ? "bg-black": "absolute"} z-70 }`}>
-        <div className='w-full  pr-15 sm:pl-12 flex justify-between items-center '>
+        <div className='w-full p-3 sm:p-0 sm:pr-15 sm:pl-12 flex justify-between items-center '>
             <div className='flex justify-center gap-10 items-center'>
                 <img className='w-35 sm:w-40 ' src={LOGO} alt="Logo" />
 
-                {user&& !showGptSearch && <div className='text-gray-400 font-semibold gap-6 flex text-lg '>
+                {user&& !showGptSearch && <div className='text-gray-400 font-semibold gap-6 xl:flex text-lg hidden text-nowrap xl:block'>
                     <h1 className='text-white cursor-not-allowed'>Home</h1>
                     <h1 className='cursor-not-allowed'>TV Shows</h1>
                     <h1 className='cursor-not-allowed'>Movies</h1>
@@ -86,8 +86,8 @@ const Header = () => {
                     </select>
                 </div>}
                 <div className='flex gap-3 justify-center items-center'>
-                    {showGptSearch ? <h1 onClick={handleGptSearchClick}  className='text-red-500 cursor-pointer border px-2 p-1 rounded-md border-gray-500 hover:shadow-lg/80  hover:border-black shadow-red-500'>Go back</h1> : <span className='flex justify-center items-center text-white'><h1>Ai Search</h1> <img  onClick={handleGptSearchClick} className='size-10 cursor-pointer ' src="/assets/GPT-Seach-icon1.png" alt=""  /></span>}
-                    <img className='size-6 cursor-not-allowed' src="/assets/notification_icon.png" alt="" />
+                    {showGptSearch ? <h1 onClick={handleGptSearchClick}  className='text-red-500 cursor-pointer border px-2 p-1 rounded-md border-gray-500 hover:shadow-lg/80  hover:border-black shadow-red-500'>Go back</h1> : <span className=' pl-15 flex justify-center items-center text-white'><h1  >Ai</h1> <img  onClick={handleGptSearchClick} className='size-10 cursor-pointer ' src="/assets/GPT-Seach-icon1.png" alt=""  /></span>}
+                    <img className='hidden xl:block size-6 cursor-not-allowed' src="/assets/notification_icon.png" alt="" />
                 </div>
                 <div className='flex gap-2 items-center'>
                     <img className='w-9 rounded-sm cursor-pointer' src={AVATAR_URL} alt="" />
