@@ -66,12 +66,12 @@ const Header = () => {
                 <img className='w-40 ' src={LOGO} alt="Logo" />
 
                 {user&& !showGptSearch && <div className='text-gray-400 font-semibold gap-6 flex text-lg '>
-                    <h1 className='text-white'>Home</h1>
-                    <h1>TV Shows</h1>
-                    <h1>Movies</h1>
-                    <h1>New & Popular</h1>
-                    <h1>My List</h1>
-                    <h1>Browse by Languages</h1>
+                    <h1 className='text-white cursor-not-allowed'>Home</h1>
+                    <h1 className='cursor-not-allowed'>TV Shows</h1>
+                    <h1 className='cursor-not-allowed'>Movies</h1>
+                    <h1 className='cursor-not-allowed'>New & Popular</h1>
+                    <h1 className='cursor-not-allowed'>My List</h1>
+                    <h1 className='cursor-not-allowed'>Browse by Languages</h1>
                 </div>}
             </div>
             
@@ -86,8 +86,8 @@ const Header = () => {
                     </select>
                 </div>}
                 <div className='flex gap-3 justify-center items-center'>
-                    {showGptSearch ? <h1 onClick={handleGptSearchClick}  className='text-red-500 cursor-pointer border px-2 p-1 rounded-md border-gray-500 hover:shadow-lg/80  hover:border-black shadow-red-500'>Go back</h1> : <img onClick={handleGptSearchClick} className='size-10 cursor-pointer ' src="/assets/GPT-Seach-icon1.png" alt="" />}
-                    <img className='size-6 cursor-pointer' src="/assets/notification_icon.png" alt="" />
+                    {showGptSearch ? <h1 onClick={handleGptSearchClick}  className='text-red-500 cursor-pointer border px-2 p-1 rounded-md border-gray-500 hover:shadow-lg/80  hover:border-black shadow-red-500'>Go back</h1> : <span className='flex justify-center items-center text-white'><h1>Ai Search</h1> <img  onClick={handleGptSearchClick} className='size-10 cursor-pointer ' src="/assets/GPT-Seach-icon1.png" alt=""  /></span>}
+                    <img className='size-6 cursor-not-allowed' src="/assets/notification_icon.png" alt="" />
                 </div>
                 <div className='flex gap-2 items-center'>
                     <img className='w-9 rounded-sm cursor-pointer' src={AVATAR_URL} alt="" />
