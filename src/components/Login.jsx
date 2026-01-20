@@ -11,6 +11,7 @@ import Loading from './Loading'
 
 const Login = () => {
 
+    const [loading, setLoading] = useState()
     const [showsPasswordCheckList, setShowsPasswordCheckList ] = useState(false)
     const [signIn , setSignIn] = useState(true)
     const name = useRef(null)
@@ -51,6 +52,8 @@ const Login = () => {
 
     const handleButtonClick = (e) => {
 
+
+
         e.preventDefault()
 
 
@@ -64,7 +67,7 @@ const Login = () => {
 
         if(message) return;
 
-
+        setLoading(true)
         
 
         // Sign in / Signup logic
@@ -77,12 +80,14 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
+                setLoading(false)
                 updateProfile(user, {
                     displayName: name.current.value, photoURL: AVATAR_URL
                 }).then(() => {
                     // Profile updated!
                     const {uid,  email, displayName, photoURL} = auth.currentUser;
                     dispatch(addUser({uid: uid,  email: email, displayName: displayName, photoURL:photoURL}))
+                    
                 }).catch((error) => {
                     // An error occurred
                     setErrorMessage(error.message)
@@ -106,6 +111,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                setLoading(false)
                 
                 // ...
             })
@@ -125,6 +131,7 @@ const Login = () => {
     },[signIn])
 
 
+    if(loading) return <Loading/>
 
   return (
     <div className='Netflix bg-[url(/assets/main_Bg.jpg)] bg-cover overflow-hidden '>
