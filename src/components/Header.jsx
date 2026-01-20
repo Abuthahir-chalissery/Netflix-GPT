@@ -61,9 +61,9 @@ const Header = () => {
 
   return (
     <div onClick={()=> setShowMenu(false)} className={`w-full h-16 flex justify-center items-start ${showGptSearch ? "bg-black": "absolute"} z-70 }`}>
-        <div className='w-full  pr-15 pl-12 flex justify-between items-center '>
+        <div className='w-full  pr-15 sm:pl-12 flex justify-between items-center '>
             <div className='flex justify-center gap-10 items-center'>
-                <img className='w-40 ' src={LOGO} alt="Logo" />
+                <img className='w-35 sm:w-40 ' src={LOGO} alt="Logo" />
 
                 {user&& !showGptSearch && <div className='text-gray-400 font-semibold gap-6 flex text-lg '>
                     <h1 className='text-white cursor-not-allowed'>Home</h1>
