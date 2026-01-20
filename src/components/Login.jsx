@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import Header from './Header';
+import Loading from './Loading'
 
 
 const Login = () => {
@@ -49,6 +50,7 @@ const Login = () => {
 
 
     const handleButtonClick = (e) => {
+
         e.preventDefault()
 
 
@@ -58,10 +60,16 @@ const Login = () => {
         setErrorMessage(message)
 
 
+
+
         if(message) return;
+
+
+        
 
         // Sign in / Signup logic
         if(!signIn){
+            
             // Sign Up
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
             
@@ -91,6 +99,7 @@ const Login = () => {
 
 
         }else{
+            
             // Sign In
             
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
@@ -133,7 +142,7 @@ const Login = () => {
                             <input ref={email} onClick={()=> {setShowsPasswordCheckList(false)}} className='border border-gray-500 p-2.5 sm:p-4 outline-none rounded-md bg-[#242834]/50 '  type="email" placeholder='Email' name="" id="email" />
                             <input ref={password} onClick={showPasswordCheckList} onChange={(e) => setPasswordValue(e.target.value)} className='border border-gray-500 p-2.5 sm:p-4 outline-none rounded-md bg-[#242834]/50 ' type="password" placeholder='Password' name="" id="password" />
                             <h1 className='text-red-500 w-full  text-sm font-semibold'>{errorMessage}</h1>
-                            <button onClick={handleButtonClick} className='w-full  bg-[#E50914] p-1.5 sm:p-2 rounded-md  text-lg cursor-pointer'>{signIn? "Sign In ": "Sign Up"}</button>
+                            <button onClick={handleButtonClick}  className='w-full  bg-[#E50914] p-1.5 sm:p-2 rounded-md  text-lg cursor-pointer'>{signIn? "Sign In ": "Sign Up"}</button>
                             {!signIn && showsPasswordCheckList && <div className='flex flex-col gap-1 border border-gray-800 rounded-md' style={{ marginTop: "10px", background: "", padding: "10px" }}>
                                 <Item ok={checks.length} text="Password must be at least 8 characters." />
                                 <Item ok={checks.special} text="Add at least one special character." />

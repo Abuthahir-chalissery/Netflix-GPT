@@ -65,7 +65,7 @@ const Header = () => {
             <div className='flex justify-center gap-10 items-center'>
                 <img className='w-35 sm:w-40 ' src={LOGO} alt="Logo" />
 
-                {user&& !showGptSearch && <div className='text-gray-400 font-semibold gap-6  text-lg hidden text-nowrap xl:block'>
+                {user&& !showGptSearch && <div className='text-gray-400 font-semibold gap-6  text-lg hidden text-nowrap xl:flex xl:block'>
                     <h1 className='text-white cursor-not-allowed'>Home</h1>
                     <h1 className='cursor-not-allowed'>TV Shows</h1>
                     <h1 className='cursor-not-allowed'>Movies</h1>

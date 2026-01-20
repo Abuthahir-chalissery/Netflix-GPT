@@ -7,10 +7,12 @@ import usePopularMovies from '../hooks/usePopularMovies'
 import GptSearch from './GptSearchPage'
 import { useSelector } from 'react-redux'
 import GptSearchPage from './GptSearchPage'
+import Loading from './Loading'
 
 const Browse = () => {
 
   const showGptSearch = useSelector(store => store.gpt.showGptSearch)
+  const isLoading = useSelector(store=> store.movies.isLoading)
 
   useNowPlayingMovies()
   usePopularMovies()
@@ -21,14 +23,16 @@ const Browse = () => {
 
 
   return (
-    <div >
+    <>
+      <div >
         <Header/>
-        {showGptSearch ? <GptSearchPage/>: <>
+        {showGptSearch ? (<GptSearchPage/>): isLoading? (<Loading/>) : (<>
           <MainContainer/>
           <SecondaryContainer/>
-        </>}
-        
+        </>)}
+      
     </div>
+    </>
   )
 }
 

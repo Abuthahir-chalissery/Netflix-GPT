@@ -4,7 +4,11 @@ const userSlice = createSlice(
     {
         name: 'user',
         initialState: null,
+        
         reducers: {
+            loading: (state, action)=> {
+                state.i
+            },
             addUser: (state , action) => {
                 return action.payload;
             },
