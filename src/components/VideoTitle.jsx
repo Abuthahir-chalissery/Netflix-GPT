@@ -4,7 +4,7 @@ import { IMG_CDN_URL } from '../utils/constants'
 const VideoTitle = ({title, overview , backdrop_path}) => {
   return (
     <div className='w-full h-screen flex flex-col gap-5 absolute bg-gradient-to-r from-black pt-60 md:pt-60 px-5 md:px-15'>
-        <h1 className='text-2xl md:text-5xl  font-semibold text-white'>#{title}</h1>
+        <h1 className='text-3xl md:text-5xl  font-semibold text-white'>#{title}</h1>
         <h1 className=' text-gray-300 hidden md:block w-1/2 md:w-1/3'>{overview}</h1>
         {/* <img className='w-60' src={IMG_CDN_URL+backdrop_path} alt="" /> */}
 

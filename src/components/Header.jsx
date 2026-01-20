@@ -60,8 +60,8 @@ const Header = () => {
     }
 
   return (
-    <div onClick={()=> setShowMenu(false)} className={`w-full h-16 flex justify-center items-start ${showGptSearch ? "bg-black": "absolute"} z-70 }`}>
-        <div className='w-full p-3 sm:p-0 sm:pr-15 sm:pl-12 flex justify-between items-center '>
+    <div onClick={()=> setShowMenu(false)} className={`w-full text-nowrap h-16 flex justify-center items-start ${showGptSearch ? "bg-black": "absolute"} z-70 }`}>
+        <div className='w-full p-3 pr-5 sm:p-0 sm:pr-15 sm:pl-12 flex justify-between items-center '>
             <div className='flex justify-center gap-10 items-center'>
                 <img className='w-35 sm:w-40 ' src={LOGO} alt="Logo" />
 
@@ -78,15 +78,15 @@ const Header = () => {
             {user && <div className='flex  items-center gap-5'>
 
                 {showGptSearch && <div>
-                    <select name="" id="" onChange={handleLanguageChange} className=' text-white bg-black border border-white p-1 text-xs rounded-md'>
+                    <select name="" id="" onChange={handleLanguageChange} className=' text-white bg-black border border-white hidden md:block p-1 text-sm rounded-md'>
                         {SUPPORTED_LANGUAGES.map((lang) => (
                             <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
                         ))}
                         
                     </select>
                 </div>}
-                <div className='flex gap-3 justify-center items-center'>
-                    {showGptSearch ? <h1 onClick={handleGptSearchClick}  className='text-red-500 cursor-pointer border px-2 p-1 rounded-md border-gray-500 hover:shadow-lg/80  hover:border-black shadow-red-500'>Go back</h1> : <span className=' pl-15 flex justify-center items-center text-white'><h1  >Ai</h1> <img  onClick={handleGptSearchClick} className='size-10 cursor-pointer ' src="/assets/GPT-Seach-icon1.png" alt=""  /></span>}
+                <div className='flex ml-5 md:ml-0 gap-3 justify-center items-center'>
+                    {showGptSearch ? <h1 onClick={handleGptSearchClick}  className='text-red-500 cursor-pointer border text-xs md:text-base px-2  p-2 md:p-0.5 rounded-md border-gray-500 hover:shadow-lg/80  hover:border-black shadow-red-500'>Go back</h1> : <span className=' pl-10 flex justify-center items-center text-white'><h1  >Ai</h1> <img  onClick={handleGptSearchClick} className='size-10 cursor-pointer ' src="/assets/GPT-Seach-icon1.png" alt=""  /></span>}
                     <img className='hidden xl:block size-6 cursor-not-allowed' src="/assets/notification_icon.png" alt="" />
                 </div>
                 <div className='flex gap-2 items-center'>

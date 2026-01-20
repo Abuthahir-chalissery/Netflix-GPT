@@ -82,11 +82,11 @@ const GptSearchBar = () => {
 
 
   return (
-    <div className=' flex justify-center gap-8 items-center'>
+    <div className='w-full h-auto flex justify-center gap-8 items-center'>
         {err && <h1 className='slide-down transform transition-all duration-700 ease-in-out translate-y-0 opacity-100 text-red-500 absolute top-70 border border-gray-500 px-3 p-2 rounded-md'>{err}</h1>}
         {outputText && <h1 className='slide-down transform transition-all duration-700 ease-in-out translate-y-0 opacity-100 text-red-500 absolute top-70 border border-gray-500 px-3 p-2 rounded-md'>{outputText}</h1>}
         <input ref={searchText} type="text" className='text-white w-150 p-2 border pl-3 border-gray-500 rounded-md ' placeholder={lang[langKey].gptSearchPlaceholder} />
-        {!loading ? <button onClick={handleGptSearchClick}><img className='w-10 border border-gray-500 hover:border-white cursor-pointer hover:shadow-lg/50 shadow-white   rounded-4xl' src="assets/GPT-Seach-icon2.png " alt="" /></button> : <h1 className=' animate-spin border border-white rounded-xl' >-</h1>}
+        {!loading ? <button onClick={handleGptSearchClick}><img className='min-w-10 w-10 border border-gray-500 hover:border-white cursor-pointer hover:shadow-lg/50 shadow-white   rounded-4xl' src="assets/GPT-Seach-icon2.png " alt="" /></button> : <h1 className=' animate-spin border border-white rounded-xl' >-</h1>}
         
     </div>
   )
