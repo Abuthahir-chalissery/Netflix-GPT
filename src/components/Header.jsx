@@ -65,7 +65,7 @@ const Header = () => {
             <div className='flex justify-center gap-10 items-center'>
                 <img className='w-35 sm:w-40 ' src={LOGO} alt="Logo" />
 
-                {user&& !showGptSearch && <div className='text-gray-400 font-semibold gap-6 xl:flex text-lg hidden text-nowrap xl:block'>
+                {user&& !showGptSearch && <div className='text-gray-400 font-semibold gap-6  text-lg hidden text-nowrap xl:block'>
                     <h1 className='text-white cursor-not-allowed'>Home</h1>
                     <h1 className='cursor-not-allowed'>TV Shows</h1>
                     <h1 className='cursor-not-allowed'>Movies</h1>
@@ -93,7 +93,7 @@ const Header = () => {
                     <img className='w-9 rounded-sm cursor-pointer' src={AVATAR_URL} alt="" />
                     <img onMouseEnter={() => setShowMenu(true)} className='w-4 cursor-pointer' src="/assets/down_arrow.png" alt="" />
                 </div>
-                {showMenu && <div onMouseLeave={()=> setShowMenu(false)} className=' w-40 h-50 absolute right-13 top-17 bg-gray-400 rounded-xs p-2 flex flex-col items-center justify-end transition-all duration-200 ease-in-out'>
+                {showMenu && <div onMouseLeave={()=> setShowMenu(false)} className=' w-40 h-50 z-100 absolute right-13 top-17 bg-gray-400 rounded-xs p-2 flex flex-col  items-center justify-end transition-all duration-200 ease-in-out'>
                     <button onClick={handleSignout}  className='w-20  h-10   text-black  right-15 rounded-md cursor-pointer hover:underline'>Sign out</button> 
 
                 </div>}
