@@ -14,7 +14,8 @@ const GptSearchPage = () => {
   const validMovies = flatMovies?.filter(movie => 
     movie &&
     movie.poster_path &&
-    (movie.title)
+    (movie.title && movie.title.length < 30  )
+
   )
 
   // Remove dubplicates
@@ -33,7 +34,6 @@ const GptSearchPage = () => {
 
   
   
-  console.log(pickMovies);
   
   return (
     <div className={`bg-black min-h-screen ${pickMovies && "h-full"} flex flex-col items-center `}>
